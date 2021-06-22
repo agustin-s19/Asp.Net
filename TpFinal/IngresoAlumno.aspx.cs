@@ -23,14 +23,19 @@ namespace TpFinal
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SqlConnection cn = new SqlConnection("Data Source = DESKTOP-J47BS7V\\SQLEXPRESS; Initial Catalog = Final; Integrated Security = True");
-            cn.Open();
-            string dato = "insert into alumnos (nombre) values('" + name.Text + "')";
-            SqlCommand comando = new SqlCommand(dato, cn);
-            comando.ExecuteNonQuery();
-            cn.Close();
+            DataClasses1DataContext conectar = new DataClasses1DataContext();
 
+            alumnos datos = new alumnos();
+            datos.Nombre = name.Text;
+            datos.Apellido = lastName.Text;
+            datos.Dni = Convert.ToInt32(dni.Text);
+            datos.Email = email.Text;
+            datos.Turno = turno.Text;
 
+            conectar.alumnos.InsertOnSubmit(datos);
+            conectar.SubmitChanges();
+
+            Response.Redirect("MostrarDatos.aspx?Nombre=" + name.Text + "&Apellido=" + lastName.Text +"&Dni=" + dni.Text + "&Email=" +email.Text + "&Turno=" + turno.Text);
 
 
 

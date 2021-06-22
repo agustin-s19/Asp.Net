@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Final" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-J47BS7V\SQLEXPRESS;Initial Catalog=Final;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FinalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.alumnos" Member="alumnos">
+    <Type Name="alumnos">
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Dni" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Turno" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="alumnos_comentarios" Member="comentarios" ThisKey="Dni" OtherKey="Dni" Type="comentarios" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.comentarios" Member="comentarios">
+    <Type Name="comentarios">
+      <Column Name="Dni" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Comentario" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="alumnos_comentarios" Member="alumnos" ThisKey="Dni" OtherKey="Dni" Type="alumnos" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

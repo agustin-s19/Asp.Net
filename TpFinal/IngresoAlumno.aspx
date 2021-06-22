@@ -39,13 +39,13 @@
                         <asp:Label ID="Label4" runat="server" Text="DNI" class="obligatorio" ></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="dni" runat="server"></asp:TextBox>
+                        <asp:TextBox class="desenfocada" ID="dni" runat="server"></asp:TextBox>
                     </td>
                     <td>
                         <asp:Label ID="Label5" runat="server" Text="E-mail" class="obligatorio" ></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="email" runat="server"></asp:TextBox>
+                        <asp:TextBox class="desenfocada" ID="email" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -56,7 +56,7 @@
                         <asp:Label ID="Label7" runat="server" Text="Turno" class="preferencias"></asp:Label>
                     </td>
                     <td colspan="3">
-                        <asp:DropDownList ID="turno" runat="server" Height="16px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="103px" >
+                        <asp:DropDownList class="desenfocada" ID="turno" runat="server" Height="16px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="103px" >
                              <asp:ListItem Value="Mañana"> Mañana </asp:ListItem>
                             <asp:ListItem Value="Tarde"> Tarde </asp:ListItem>
                             <asp:ListItem Value="Noche"> Noche </asp:ListItem>
