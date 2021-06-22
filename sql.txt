@@ -1,0 +1,17 @@
+create database Final
+
+create table alumnos(
+Apellido VARCHAR (100) NOT NULL,
+Nombre VARCHAR (100) NOT NULL,
+Dni INT PK NOT NULL,
+Email VARCHAR(150) NOT NULL,
+Turno VARCHAR(20) NOT NULL)
+
+
+
+create table comentarios(
+Apellido VARCHAR(100) NOT NULL,
+Dni INT FOREIGN KEY(Dni) REFERENCES [dbo].[alumnos](Dni),
+Comentario VARCHAR(500) NOT NULL)
+
+drop database Final
